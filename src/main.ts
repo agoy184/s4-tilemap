@@ -60,6 +60,7 @@ function drawTexture(
 ) {
   image.onload = () => {
     ctx.drawImage(image, row * cellSize, col * cellSize, width, height);
+    //must be refactored to have only 3 parameters, those being the image, x, and y for coordinates  
   };
   ctx.drawImage(image, row * cellSize, col * cellSize, width, height);
 }
