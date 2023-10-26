@@ -60,7 +60,6 @@ function drawTexture(
 ) {
   image.onload = () => {
     ctx.drawImage(image, row * cellSize, col * cellSize, width, height);
-    //must be refactored to have only 3 parameters, those being the image, x, and y for coordinates  
   };
   ctx.drawImage(image, row * cellSize, col * cellSize, width, height);
 }
@@ -85,14 +84,6 @@ function redrawTilemap() {
 }
 
 let isDrawing = false;
-/*
-gridCanvas.addEventListener("click", (e) => {
-    const coordX = Math.trunc(e.offsetX / tileSize);
-    const coordY = Math.trunc(e.offsetY / tileSize);
-    isDrawing = true;
-    tilemap[coordX][coordY].src = currentTile;
-    redrawTilemap();
-})*/
 
 gridCanvas.addEventListener("mousedown", (e) => {
   const coordX = Math.trunc(e.offsetX / tileSize);
@@ -114,16 +105,6 @@ gridCanvas.addEventListener("mouseup", (e) => {
   isDrawing = false;
 });
 
-/*
-canvas.addEventListener("mousemove", (e) => {
-  if (isDrawing) {
-    x = e.offsetX;
-    y = e.offsetY;
-    currentLine.drag(x, y);
-    notify("drawing-changed");
-  }
-});
-*/
 
 // ----- Interacting with the selectable tilemap -----
 
